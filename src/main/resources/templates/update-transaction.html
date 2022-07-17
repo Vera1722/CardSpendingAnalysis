@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>MyProject</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+   body {
+    background-color: #AFEEEE;
+   }
+  </style>
+</head>
+<body>
+<div class="container">
+    <br>
+    <form action="update-transaction" method="post" th:object="${transactions}">
+        <input type="hidden" th:field="*{id}">
+        <p class="font-weight-bold">Дата транзакции <input type="date" name="transactionDate" th:field="*{transactionDate}"></p>
+        <br>
+        <p class="font-weight-bold">Сумма транзакции <input type="number" step="0.01" min="0" placeholder="0,00" name="transactionSum" th:field="*{transactionSum}"> BYN</p>
+        <br>
+        <p class="font-weight-bold">Категория транзакции:</p>
+        <select name="transactionCategory" th:field="*{transactionCategory}">
+            <!--<option value="">Выберите из списка</option>-->
+            <option value="Автомобиль" >Автомобиль</option>
+            <option value="Еда и продукты">Еда и продукты</option>
+            <option value="Снятие наличных">Снятие наличных</option>
+            <option value="Развлечения">Развлечения</option>
+            <option value="Коммунальные расходы">Коммунальные расходы</option>
+            <option value="Переводы">Переводы</option>
+            <option value="Прочее">Прочее</option>
+        </select>
+        <br>
+        <br>
+        <button class="btn btn-secondary" type="submit">Отредактировать транзакцию</button>
+    </form>
+</div>
+</body>
+</html>

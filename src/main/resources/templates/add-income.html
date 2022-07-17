@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyProject</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+   body {
+    background-color: #D8BFD8;
+   }
+  </style>
+</head>
+<body>
+<div class="container">
+    <br>
+    <form action="add-income" method="post">
+        <p class="font-weight-bold">Дата операции <input type="date" name="incomeDate"></p>
+        <br>
+        <p class="font-weight-bold">Сумма операции <input type="number" step="0.01" min="0" placeholder="0,00"
+                                                            name="incomeSum"> BYN</p>
+        <br>
+        <p class="font-weight-bold">Описание операции:<input type="text" name="incomeDescription"></p>
+        <br>
+        <button class="btn btn-primary" type="submit">Добавить операцию</button>
+    </form>
+</div>
+</body>
+</html>

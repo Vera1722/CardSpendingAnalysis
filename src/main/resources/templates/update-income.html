@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>MyProject</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+   body {
+    background-color: #AFEEEE;
+   }
+  </style>
+</head>
+<body>
+<div class="container">
+    <br>
+    <form action="update-income" method="post" th:object="${income}">
+        <input type="hidden" th:field="*{id}">
+        <p class="font-weight-bold">Дата операции <input type="date" name="incomeDate" th:field="*{incomeDate}"></p>
+        <br>
+        <p class="font-weight-bold">Сумма операции <input type="number" step="0.01" min="0" placeholder="0,00" name="incomeSum" th:field="*{incomeSum}"> BYN</p>
+        <br>
+        <p class="font-weight-bold">Описание операции: <input type="text" name="incomeDescription" th:field="*{incomeDescription}"></p>
+        <br>
+        <button class="btn btn-secondary" type="submit">Отредактировать операцию</button>
+    </form>
+</div>
+</body>
+</html>
