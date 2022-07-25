@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Controller
@@ -17,6 +19,12 @@ public class TransactionController {
     @GetMapping("/transactions")
     public String findAll(Model model) {
         List<Transactions> transactions = transactionRepository.findAll();
+        Collections.sort(transactions, new Comparator<Transactions>() {
+            @Override
+            public int compare(Transactions o1, Transactions o2) {
+                return o1.transactionDate.compareTo(o2.transactionDate);
+            }
+        });
         model.addAttribute("transactions", transactions);
         double sum =0;
         for (int i = 0; i < transactions.size(); i++) {
