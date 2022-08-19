@@ -26,11 +26,11 @@ public class TransactionController {
             }
         });
         model.addAttribute("transactions", transactions);
-        double sum =0;
+        double sum = 0;
         for (int i = 0; i < transactions.size(); i++) {
-            sum+=transactions.get(i).transactionSum;
+            sum += transactions.get(i).transactionSum;
         }
-        model.addAttribute("sum",  String.format( "%.2f", sum));
+        model.addAttribute("sum", String.format("%.2f", sum));
         return "transactions";
     }
 
